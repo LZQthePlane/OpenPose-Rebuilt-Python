@@ -120,3 +120,4 @@ test/mySweet.jpg
 *.caffemodel
 *.pb
 .idea
+__pycache__
