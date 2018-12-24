@@ -5,7 +5,7 @@ Rebuilting the CMU-OpenPose pose estimatior using Python with OpenCV and Tensorf
 -------
 ## Pretrained-model Downloading   
 In this work, I used both **caffemodel** and **tensorflow-graph-model**, you can download them from [here](https://pan.baidu.com/s/1XT8pHtNP1FQs3BPHgD5f-A), Then place the pretrained models to corresponding directory respectively.   
-### *Examples:*  
+ #### *Examples:*
  - place `caffe_models\pose\body_25\pose_iter_584000.caffemodel` into `pose-estimator-using-caffemodel\model\body_25\`    
  - place `caffe_models\hand\pose_iter_102000.caffemodel` into `hand-estimator-using-caffemodel\model\`   
  - place `openpose graph model coco\graph_opt.pb` into `pose-estimator-tensorflow\graph_model_coco\`   
@@ -25,10 +25,29 @@ See the sub-README.md in sub-folder.
  - BODY_25 model is ***faster, more accurate***, and it includes foot keypoints. 
  - COCO requires less memory on GPU (being able to fit into 2GB GPUs with the default settings) and it runs ***faster on CPU-only mode***. 
  - MPI model is only meant for people requiring the MPI-keypoint structure. It is also slower than BODY_25 and far less accurate.
-### *Output Format*   
+#### *Output Format*   
 **Body_25 in left, COCO in middle, MPI in right.**
-<div style="float:left;border:solid 5px 000;margin:2px;"><img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/test_out/Output-BODY_25.jpg" width="290"/><img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/test_out/Output-COCO.jpg"  width="290"/><img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/test_out/Output-MPI.jpg" width="290"></div>
-**more details** [here](https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/output.md), **Hand Output Format** included as well.
+<div style="float:left;border:solid 5px 000;margin:2px;"><img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/test_out/Output-BODY_25.jpg" width="290"/><img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/test_out/Output-COCO.jpg"  width="290"/><img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/test_out/Output-MPI.jpg" width="290"></div>   
+
+  **See more Output Format details [here](https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/output.md)**, and **Hand Output Format** included as well.
 
 -------
 ## Results Showing
+#### *Image testing* 
+<p align="center">
+    <img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/test_out/CSBDGS_out.jpg", width="480">
+</p>
+<p align="center">
+    <img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/test_out/Friends_out.jpg", width="480">
+</p>
+<p align="center">
+    <img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/test_out/TBBT_out.jpg", width="480">
+</p>
+<p align="center">
+    <img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/test_out/WLWZ_out.jpg", width="480">
+</p>
+
+#### *VideoStream testing* 
+<p align="center">
+    <img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/test_out/webcam_out.gif", width="720">
+</p>
