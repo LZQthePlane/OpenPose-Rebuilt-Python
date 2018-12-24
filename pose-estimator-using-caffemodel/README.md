@@ -1,11 +1,10 @@
 
-A.Requirements : 
-1. OpenCV > 3.4.1
-2. Matplotlib for Notebook
-3. RUN getModels.sh from command line Or Download caffe model from http://posefs1.perception.cs.cmu.edu/Users/ZheCao/pose_iter_440000.caffemodel and put it in pose/coco folder
+### Usage Examples :
+Put the test file (iamge or video) under the same directory   
+   
+ - `python3 estimator_multi_people.py --image=test.jpg`   
+ - `python3 estimator_multi_people.py --video=test.mp4`   
+ - if no argument provided, it starts the webcam.
 
-
-Difference between BODY_25 vs. COCO vs. MPI
-COCO model will eventually be removed. BODY_25 model is faster, more accurate, and it includes foot keypoints. However, COCO requires less memory on GPU (being able to fit into 2GB GPUs with the default settings) and it runs faster on CPU-only mode. MPI model is only meant for people requiring the MPI-keypoint structure. It is also slower than BODY_25 and far less accurate.
-
-Output Format
+### Note
+You can refer [here](https://www.learnopencv.com/multi-person-pose-estimation-in-opencv-using-openpose/) in english, or [here](https://blog.csdn.net/qq_27158179/article/details/82717821) in chinese.
