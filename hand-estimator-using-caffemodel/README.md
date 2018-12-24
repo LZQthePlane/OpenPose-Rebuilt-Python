@@ -1,8 +1,8 @@
 ### Usage Examples :
 Put the test file (iamge or video) under the same directory   
    
- - `python3 object_detection_tf_API.py --image=test.jpg`   
- - `python3 object_detection_tf_API.py --video=test.mp4`   
+ - `python3 handpose.py --image=test.jpg`   
+ - `python3 handpose.py --video=test.mp4`   
  - if no argument provided, it starts the webcam.
  
 ### Result showing
