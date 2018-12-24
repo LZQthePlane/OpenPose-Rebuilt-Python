@@ -8,6 +8,7 @@ Put the test file (iamge or video) under the same directory
 ## Note
  - see more details [here](https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/output.md#hand-output-format)
  - see the origin paper [here](https://arxiv.org/abs/1704.07809)
+ - the code given can detect ***only one hand*** at a time.
  
 ## Result showing
 <p align="center">
