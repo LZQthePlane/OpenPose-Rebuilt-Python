@@ -1,6 +1,6 @@
 
 ## Usage Examples :
-Creat a file names `graph_model_coco`;   
+Creat a file names `graph_model_coco`, and palce the pretrained model here;   
 Put the test file (iamge or video) under the same directory of `openpose_tf.py`.   
    
  - `python3 openpose_tf.py --image=test.jpg`   
