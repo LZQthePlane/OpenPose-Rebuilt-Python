@@ -52,7 +52,7 @@ See the sub-README.md in sub-folder.
     <img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/test_out/webcam_out.gif", width="720">
 </p>
 
-#### *webcam-skeleton-sequence testing* 
+#### *Webcam-skeleton-drawer testing* 
 Script in `pose-estimator-tensorflow` folder.   
 <p align="center">
     <img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/pose-estimator-tensorflow/test_out/skeleton_sequence.jpg", width="720">
