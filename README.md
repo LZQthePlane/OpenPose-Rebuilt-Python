@@ -33,7 +33,7 @@ See the sub-README.md in sub-folder.
 
 -------
 ## Results Showing
-#### *Image testing* 
+#### *Image test* 
 <p align="center">
     <img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/test_out/CSBDGS_out.jpg", width="480">
 </p>
@@ -47,14 +47,16 @@ See the sub-README.md in sub-folder.
     <img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/test_out/WLWZ_out.jpg", width="480">
 </p>
 
-#### *VideoStream testing* 
+#### *VideoStream test* 
 <p align="center">
-    <img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/test_out/webcam_out.gif", width="720">
+    <img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/test_out/webcam_out.gif", width="480">
 </p>
 
-#### *Webcam-skeleton-drawer testing* 
+#### *Webcam-skeleton-drawer test* 
 Script in `pose-estimator-tensorflow` folder.   
 <p align="center">
-    <img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/pose-estimator-tensorflow/test_out/skeleton_sequence.jpg", width="720">
+    <img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/pose-estimator-tensorflow/test_out/skeleton_sequence.jpg", width="480">
 </p>   
-
+<p align="center">
+    <img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/pose-estimator-tensorflow/test_out/skeleton_sequence_horizontal.jpg", width="720">
+</p>   
