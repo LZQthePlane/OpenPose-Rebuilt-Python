@@ -4,7 +4,7 @@ Rebuilting the CMU-OpenPose pose estimatior using Python with OpenCV and Tensorf
 
 -------
 ## Pretrained-model Downloading   
-In this work, I used both **caffemodel** and **tensorflow-graph-model**, you can download them from [here](https://pan.baidu.com/s/1XT8pHtNP1FQs3BPHgD5f-A), Then place the pretrained models to corresponding directory respectively.   
+In this work, I used both **caffemodel** and **tensorflow-graph-model**, you can download them [here](https://pan.baidu.com/s/1XT8pHtNP1FQs3BPHgD5f-A), Then place the pretrained models to corresponding directory respectively.   
  #### *Examples:*
  - place `caffe_models\pose\body_25\pose_iter_584000.caffemodel` into `pose-estimator-using-caffemodel\model\body_25\`    
  - place `caffe_models\hand\pose_iter_102000.caffemodel` into `hand-estimator-using-caffemodel\model\`   
