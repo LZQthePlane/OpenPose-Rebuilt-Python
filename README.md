@@ -51,3 +51,9 @@ See the sub-README.md in sub-folder.
 <p align="center">
     <img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/test_out/webcam_out.gif", width="720">
 </p>
+
+#### *webcam-skeleton-sequence testing* 
+<p align="center">
+    <img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/pose-estimator-tensorflow/test_out/skeleton_sequence.jpg", width="720">
+</p>
+See it in `pose-estimator-tensorflow` folder.
