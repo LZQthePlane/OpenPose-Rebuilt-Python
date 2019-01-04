@@ -53,7 +53,8 @@ See the sub-README.md in sub-folder.
 </p>
 
 #### *webcam-skeleton-sequence testing* 
+Script in `pose-estimator-tensorflow` folder.   
 <p align="center">
     <img src="https://github.com/LZQthePlane/OpenPose-Rebuilt-Python/blob/master/pose-estimator-tensorflow/test_out/skeleton_sequence.jpg", width="720">
-</p>
-See it in `pose-estimator-tensorflow` folder.
+</p>   
+
