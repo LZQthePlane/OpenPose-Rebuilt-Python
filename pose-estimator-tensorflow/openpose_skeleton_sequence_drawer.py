@@ -198,6 +198,36 @@ class TfPoseEstimator:
                     continue
                 cv.line(back_ground, centers[pair[0]], centers[pair[1]], CocoColors[pair_order], 3, cv.LINE_AA)
 
+    @staticmethod
+    def draw_pose_sequence_horizontally(frame, humans, cnt):
+        image_h, image_w = frame.shape[:2]
+        for human in humans:
+            xs, ys, centers = [], [], {}
+            # 将所有关节点绘制到图像上
+            joints_num = CocoPart.Background.value
+            for i in range(joints_num):
+                if i not in human.body_parts.keys():
+                    continue
+
+                body_part = human.body_parts[i]
+                center = (int(body_part.x * image_w + 0.5),
+                          int(body_part.y * image_h + 0.5))
+
+                pos_move = cnt * back_ground_w / 200
+                center = (int(center[0] + pos_move), center[1])
+
+                centers[i] = center
+                xs.append(center[0])
+                ys.append(center[1])
+                # 绘制关节点
+                cv.circle(back_ground, centers[i], 3, CocoColors[i], thickness=3, lineType=8, shift=0)
+
+            # 将属于同一人的关节点按照各个部位相连
+            for pair_order, pair in enumerate(CocoPairsRender):
+                if pair[0] not in human.body_parts.keys() or pair[1] not in human.body_parts.keys():
+                    continue
+                cv.line(back_ground, centers[pair[0]], centers[pair[1]], CocoColors[pair_order], 3, cv.LINE_AA)
+
     def inference(self, npimg):
         if npimg is None:
             raise Exception('The image does not exist.')
@@ -431,11 +461,16 @@ CocoPairs = [(1, 2), (1, 5),  (2, 3),  (3, 4),   (5, 6),   (6, 7), (1, 8),
              (8, 9), (9, 10), (1, 11), (11, 12), (12, 13), (1, 0), (0, 14),
              (14, 16), (0, 15), (15, 17), (2, 16), (5, 17)]   # = 19
 CocoPairsRender = CocoPairs[:-2]
-CocoPairsNetwork = [(12, 13), (20, 21), (14, 15), (16, 17), (22, 23), (24, 25), (0, 1), (2, 3), (4, 5),
-    (6, 7), (8, 9), (10, 11), (28, 29), (30, 31), (34, 35), (32, 33), (36, 37), (18, 19), (26, 27)]  # = 19
-CocoColors = [[0, 100, 255], [0, 100, 255], [0, 255, 255], [0, 100, 255], [0, 255, 255], [0, 100, 255],
-              [0, 255, 0], [255, 200, 100], [255, 0, 255], [0, 255, 0], [255, 200, 100], [255, 0, 255],
-              [0, 0, 255],   [255, 0, 0],   [200, 200, 0], [255, 0, 0],   [200, 200, 0], [0, 0, 0]]
+CocoPairsNetwork = [(12, 13), (20, 21), (14, 15), (16, 17), (22, 23), (24, 25), (0, 1),
+                    (2, 3),   (4, 5),   (6, 7),   (8, 9),   (10, 11), (28, 29), (30, 31),
+                    (34, 35), (32, 33), (36, 37), (18, 19), (26, 27)]  # = 19
+
+# CocoColors = [[0, 100, 255], [0, 100, 255], [0, 255, 255], [0, 100, 255], [0, 255, 255], [0, 100, 255],
+#               [0, 255, 0], [255, 200, 100], [255, 0, 255], [0, 255, 0], [255, 200, 100], [255, 0, 255],
+#               [0, 0, 255],   [255, 0, 0],   [200, 200, 0], [255, 0, 0],   [200, 200, 0], [0, 0, 0]]
+CocoColors = [[255, 0, 0], [255, 85, 0], [255, 170, 0], [255, 255, 0], [170, 255, 0], [85, 255, 0], [0, 255, 0],
+              [0, 255, 85], [0, 255, 170], [0, 255, 255], [0, 170, 255], [0, 85, 255], [0, 0, 255], [85, 0, 255],
+              [170, 0, 255], [255, 0, 255], [255, 0, 170], [255, 0, 85]]
 
 
 def choose_run_mode():
@@ -487,12 +522,10 @@ if __name__ == "__main__":
                                  round(cap.get(cv.CAP_PROP_FRAME_HEIGHT))))
 
     # 画骨架的序列图所需要的白色背景，可更改背景大小
-    back_ground_h, back_ground_w = 1500, 1800
+    back_ground_h, back_ground_w = 1500, 2400
     back_ground = np.ones((back_ground_h, back_ground_w), dtype=np.uint8)
     back_ground = cv.cvtColor(back_ground, cv.COLOR_GRAY2BGR)
     back_ground[:, :, :] = 255  # white background
-    # 保存骨架数据
-    skeleton_info = []
     # 间隔interval帧，抽取骨架信息一次
     interval = 12
 
@@ -517,7 +550,7 @@ if __name__ == "__main__":
         frame_show = TfPoseEstimator.draw_pose_bbox(frame, humans)[0]
 
         if frame_count % interval == 0 and frame_count <= 180:
-            TfPoseEstimator.draw_pose_sequence_reverse(frame, humans, frame_count)
+            TfPoseEstimator.draw_pose_sequence_horizontally(frame, humans, frame_count)
 
         # FPS的实时显示
         fps_show = 'FPS:{0:.4}'.format(realtime_fps)
